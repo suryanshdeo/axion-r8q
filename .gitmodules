@@ -1,0 +1,8 @@
+[submodule "vendor/samsung/r8q"]
+	path = vendor/samsung/r8q
+	url = https://github.com/TheMuppets/proprietary_vendor_samsung_r8q
+	branch = lineage-23.2
+[submodule "vendor/samsung/sm8250-common"]
+	path = vendor/samsung/sm8250-common
+	url = https://github.com/TheMuppets/proprietary_vendor_samsung_sm8250-common
+	branch = lineage-23.2
