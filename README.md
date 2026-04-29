@@ -139,17 +139,42 @@ Create `.repo/local_manifests/r8q.xml`:
 repo sync -c -j16
 ```
 
-### Step 5: Clone Proprietary Vendor Blobs
+### Step 5: Initialize Proprietary Vendor Blobs (Submodules)
+
+The vendor repositories are managed as **git submodules** tracked from TheMuppets. Initialize them:
 
 ```bash
-# TheMuppets proprietary vendor repository (sm8250-common)
-git clone https://github.com/TheMuppets/proprietary_vendor_samsung_sm8250-common -b lineage-23.2 vendor/samsung/sm8250-common
-
-# r8q-specific vendor blobs
-git clone https://github.com/TheMuppets/proprietary_vendor_samsung_r8q -b lineage-23.2 vendor/samsung/r8q
+git submodule update --init --recursive
 ```
 
-These vendor packages contain proprietary device drivers and firmware required for proper hardware functionality.
+This will automatically clone:
+- `proprietary_vendor_samsung_r8q` → `vendor/samsung/r8q`
+- `proprietary_vendor_samsung_sm8250-common` → `vendor/samsung/sm8250-common`
+
+**Vendor packages contain:**
+- Proprietary device drivers
+- Camera firmware and libraries
+- Display and sensor drivers
+- Audio HAL components
+- Qualcomm-specific blobs
+
+**Updating Vendor Blobs:**
+
+To sync vendor blobs with the latest changes from TheMuppets:
+
+```bash
+git submodule update --remote --merge
+git add .gitmodules vendor/samsung/
+git commit -m "Update vendor blobs from TheMuppets upstream"
+```
+
+**Why Submodules?**
+
+Submodules allow:
+- ✅ Automatic tracking of upstream changes
+- ✅ Clean repository structure (no duplicate files)
+- ✅ Easy updates with one command
+- ✅ Proper versioning of vendor commits
 
 ---
 
@@ -207,6 +232,20 @@ tar -xzvf keys-backup.tar.gz -C vendor/lineage-priv/
 
 # Verify keys are present
 ls -la vendor/lineage-priv/keys/
+```
+
+### Step 4: Initialize and Update Submodules
+
+Before building, ensure all submodules are initialized:
+
+```bash
+git submodule update --init --recursive
+```
+
+**For subsequent builds, check for vendor updates:**
+
+```bash
+git submodule update --remote --merge
 ```
 
 ---
@@ -638,6 +677,35 @@ adb shell dumpsys batterystats | grep "Wake lock"
 
 ```bash
 adb shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+```
+
+### Vendor Submodule Issues
+
+**Submodule not initialized:**
+
+```bash
+git submodule update --init --recursive
+```
+
+**Submodule checkout failed:**
+
+```bash
+git submodule deinit -f vendor/samsung/r8q
+git submodule update --init vendor/samsung/r8q
+```
+
+**Update vendor blobs from upstream:**
+
+```bash
+git submodule update --remote --merge
+git add .gitmodules vendor/samsung/
+git commit -m "Update vendor blobs from TheMuppets"
+```
+
+**Check submodule status:**
+
+```bash
+git submodule status
 ```
 
 ---
