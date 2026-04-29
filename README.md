@@ -1,6 +1,6 @@
-# AxionOS 2.6 for Samsung r8q
+# AxionOS for Samsung r8q
 
-Custom Android ROM based on AxionOS 2.6 (Android 16) for Samsung r8q (Snapdragon 865).
+Custom Android ROM based on AxionOS (Android 16) for Samsung r8q (Snapdragon 865).
 
 **Version:** 2.6 QUASIS-UNOFFICIAL-GMS  
 **Device:** Samsung Galaxy S20 Ultra (r8q) / SM8250  
@@ -20,7 +20,7 @@ Custom Android ROM based on AxionOS 2.6 (Android 16) for Samsung r8q (Snapdragon
 | **UDFPS** | Yes (Under-Display) |
 | **Refresh Rates** | 60Hz, 120Hz |
 | **Maintainer** | LoveMyAss |
-| **ROM Version** | AxionOS 2.6 |
+| **ROM Version** | AxionOS |
 
 ---
 
