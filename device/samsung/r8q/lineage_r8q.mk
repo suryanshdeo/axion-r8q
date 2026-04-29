@@ -26,8 +26,8 @@ $(call inherit-product, device/samsung/r8q/device.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Axion about:
-AXION_CAMERA_REAR_INFO := 12MP, 12MP, 8MP
-AXION_CAMERA_FRONT_INFO := 8MP
+AXION_CAMERA_REAR_INFO := 12,12,8
+AXION_CAMERA_FRONT_INFO := 32
 AXION_MAINTAINER := LoveMyAss
 AXION_PROCESSOR := Snapdragon_865
 
@@ -36,7 +36,7 @@ TARGET_ENABLE_BLUR := true
 BYPASS_CHARGE_SUPPORTED := true
 TARGET_HAS_UDFPS := true
 TARGET_INCLUDE_AXFX := true
-TARGET_SUPPORTED_REFRESH_RATES := 60,75,90,120
+TARGET_SUPPORTED_REFRESH_RATES := 60,120
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
