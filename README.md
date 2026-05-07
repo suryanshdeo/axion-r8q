@@ -418,35 +418,6 @@ For subsequent builds, users can perform OTA updates:
 
 ---
 
-## 🔧 Advanced: Environment Optimization
-
-### Enable Compiler Cache (ccache)
-
-Speed up rebuilds significantly:
-
-```bash
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-ccache -M 50G    # Allocate 50GB for cache
-```
-
-Add to `~/.bashrc` for permanent setup:
-
-```bash
-echo 'export USE_CCACHE=1' >> ~/.bashrc
-echo 'export CCACHE_EXEC=/usr/bin/ccache' >> ~/.bashrc
-source ~/.bashrc
-```
-
-### Monitor ccache
-
-```bash
-ccache -s              # Show cache stats
-ccache -C              # Clear cache if needed
-```
-
----
-
 ## 🐛 Troubleshooting
 
 
