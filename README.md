@@ -2,11 +2,6 @@
 
 Custom Android ROM based on AxionOS (Android 16) for Samsung r8q (Snapdragon 865).
 
-**Version:** 2.6 QUASIS-UNOFFICIAL-GMS  
-**Device:** Samsung Galaxy S20 Ultra (r8q) / SM8250  
-**Build Date:** April 2026  
-**Status:** Production Ready
-
 ---
 
 ## 🔧 Device Specifications
@@ -27,7 +22,6 @@ Custom Android ROM based on AxionOS (Android 16) for Samsung r8q (Snapdragon 865
 ## ✨ Key Features
 
 - **GMS Build** – Google Mobile Services included (Gmail, Play Store, Maps, etc.)
-- **KernelSU integrated** – Root access for advanced users
 - **UDFPS support** – Under-display fingerprint sensor fully functional
 - **Blur enabled** – Visual polish and depth effects throughout UI
 - **60/120Hz refresh rate support** – Smooth scrolling and animations
@@ -257,30 +251,11 @@ export SKIP_ABI_CHECKS=true
 ax -br -j8
 ```
 
-**Flags:**
-- `-b` – Build ROM
-- `-r` – Build recovery
-- `-j8` – Use 8 parallel jobs (adjust to your CPU thread count)
-
 **Expected output location:**
 
 ```
 out/target/product/r8q/axion-2.6-QUASIS-UNOFFICIAL-GMS-r8q.zip
 ```
-
-### Build Timeline
-
-| Step | Duration | Notes |
-|------|----------|-------|
-| Initial setup | 2–3 min | First time only |
-| Framework compilation | 10–15 min | Slower on first build (ccache populate) |
-| System apps | 15–25 min | Varies with parallelism |
-| Device-specific modules | 5–10 min | Kernel, HALs, vendor libs |
-| Package ROM | 5–8 min | Zip creation and signing |
-| **Total (first build)** | **45–90 min** | Depends on CPU cores and SSD speed |
-| **Total (rebuild)** | **30–60 min** | With ccache enabled |
-
----
 
 ## 🔗 Useful Resources & Links
 
