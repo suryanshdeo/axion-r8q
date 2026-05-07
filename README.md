@@ -703,15 +703,8 @@ rm -rf out/               # Nuclear option - remove all outputs
 
 ---
 
-## 👨‍💻 Contributors & Maintainers
-
-**ROM Maintainer:** Suryansh Deo  
-**GitHub:** [@suryanshdeo](https://github.com/suryanshdeo)  
-**Device Maintainer:** LoveMyAss  
-
----
-
 ## 📝 License
+
 
 This ROM is built upon:
 - **AxionOS** – Custom Android distribution
