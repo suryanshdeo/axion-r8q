@@ -447,43 +447,8 @@ ccache -C              # Clear cache if needed
 
 ---
 
-## ❌ Do NOT Commit to Repository
-
-Add these to `.gitignore`:
-
-```
-# Build outputs
-out/
-.repo/
-ccache/
-
-# Proprietary/Confidential
-vendor/lineage-priv/keys/      # SIGNING KEYS - CONFIDENTIAL
-vendor/samsung/*/proprietary/  # Proprietary blobs
-
-# Large files
-*.img
-*.bin
-*.so
-*.apk
-*.zip
-
-# Build artifacts
-*.o
-*.a
-*.elf
-```
-
-**Never commit:**
-- Signing keys
-- Build outputs
-- Proprietary blobs
-- Compiled objects
-- OTA packages
-
----
-
 ## 🐛 Troubleshooting
+
 
 ### Build Fails: "Command not found"
 
