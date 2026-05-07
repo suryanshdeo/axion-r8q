@@ -188,20 +188,6 @@ tar -xzvf keys-backup.tar.gz -C vendor/lineage-priv/
 ls -la vendor/lineage-priv/keys/
 ```
 
-### Step 4: Initialize and Update Submodules
-
-Before building, ensure all submodules are initialized:
-
-```bash
-git submodule update --init --recursive
-```
-
-**For subsequent builds, check for vendor updates:**
-
-```bash
-git submodule update --remote --merge
-```
-
 ---
 
 ## 📱 Prepare for Build
