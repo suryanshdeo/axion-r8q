@@ -114,69 +114,7 @@ repo sync -c -j16
 
 Replace `-j16` with your CPU thread count for faster sync. Monitor your RAM usage if building on lower-end systems.
 
-### Step 3: Add Custom Device Manifests
-
-Create local manifests directory:
-
-```bash
-mkdir -p .repo/local_manifests
-```
-
-Create `.repo/local_manifests/r8q.xml`:
-
-```xml
-<manifest>
-  <project name="LineageOS/android_device_samsung_r8q" path="device/samsung/r8q" remote="github" revision="lineage-23.2" />
-  <project name="LineageOS/android_kernel_samsung_sm8250" path="kernel/samsung/sm8250" remote="github" revision="lineage-23.2" />
-  <project name="LineageOS/android_device_samsung_sm8250-common" path="device/samsung/sm8250-common" remote="github" revision="lineage-23.2" />
-  <project name="LineageOS/android_vendor_samsung_sm8250-common" path="vendor/samsung/sm8250-common" remote="github" revision="lineage-23.2" />
-</manifest>
-```
-
-### Step 4: Sync Device-Specific Projects
-
-```bash
-repo sync -c -j16
-```
-
-### Step 5: Initialize Proprietary Vendor Blobs (Submodules)
-
-The vendor repositories are managed as **git submodules** tracked from TheMuppets. Initialize them:
-
-```bash
-git submodule update --init --recursive
-```
-
-This will automatically clone:
-- `proprietary_vendor_samsung_r8q` → `vendor/samsung/r8q`
-- `proprietary_vendor_samsung_sm8250-common` → `vendor/samsung/sm8250-common`
-
-**Vendor packages contain:**
-- Proprietary device drivers
-- Camera firmware and libraries
-- Display and sensor drivers
-- Audio HAL components
-- Qualcomm-specific blobs
-
-**Updating Vendor Blobs:**
-
-To sync vendor blobs with the latest changes from TheMuppets:
-
-```bash
-git submodule update --remote --merge
-git add .gitmodules vendor/samsung/
-git commit -m "Update vendor blobs from TheMuppets upstream"
-```
-
-**Why Submodules?**
-
-Submodules allow:
-- ✅ Automatic tracking of upstream changes
-- ✅ Clean repository structure (no duplicate files)
-- ✅ Easy updates with one command
-- ✅ Proper versioning of vendor commits
-
-### Alternative: Manual Clone Method
+### Step 3: Manual Clone Method
 
 If you prefer manual control, remove the hardware directory and clone all components individually:
 
