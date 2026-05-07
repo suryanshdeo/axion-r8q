@@ -114,9 +114,9 @@ repo sync -c -j16
 
 Replace `-j16` with your CPU thread count for faster sync. Monitor your RAM usage if building on lower-end systems.
 
-### Step 3: Manual Clone Method
+### Step 3: Clone Device Trees and Vendor Blobs
 
-If you prefer manual control, remove the hardware directory and clone all components individually:
+If you prefer manual control, remove the hardware directory and clone all device trees and vendor blobs individually:
 
 ```bash
 rm -rf hardware/samsung/
