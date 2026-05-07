@@ -718,18 +718,4 @@ Respect all applicable licenses:
 
 All proprietary vendor files retain their original licenses from Samsung.
 
----
 
-## 📄 Build Information
-
-| Property | Value |
-|----------|-------|
-| **ROM Name** | AxionOS |
-| **ROM Version** | 2.6 |
-| **Build Codename** | QUASIS |
-| **Build Type** | UNOFFICIAL |
-| **Device** | r8q (Samsung Galaxy S20 Ultra) |
-| **Build Date** | April 2026 |
-| **Base Android** | 16 (Lineage 23.2) |
-| **SoC** | Snapdragon 865 |
-| **Maintainer** | Suryansh Deo (@suryanshdeo) |
