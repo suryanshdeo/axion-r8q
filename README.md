@@ -664,45 +664,6 @@ git submodule status
 
 ## 📝 Build System Commands Reference
 
-### Useful Commands
-
-```bash
-# Environment setup
-source build/envsetup.sh
-
-# Device/variant selection
-axion r8q gms user        # Select device and variant
-lunch r8q-user            # Alternative syntax
-
-# Build targets
-ax -b                     # Build ROM only
-ax -r                     # Build recovery only
-ax -br                    # Build both ROM and recovery
-ax -c                     # Clean build (remove build artifacts)
-
-# Parallel jobs
--j4, -j8, -j16            # Adjust job count to CPU cores
-
-# Key generation (FIRST TIME ONLY)
-gk -s                     # Generate signing keys
-
-# Repository sync
-repo sync -c -j16         # Sync current branch, 16 parallel
-repo sync                 # Full sync
-repo forall -c git status # Check status of all repos
-
-# Checking logs
-tail -f out/verbose.log   # Monitor build in real-time
-cat out/error.log         # Check build errors
-
-# Clean builds
-make clean                # Clean build artifacts
-make clobber              # Full clean (including intermediates)
-rm -rf out/               # Nuclear option - remove all outputs
-```
-
----
-
 ## 📝 License
 
 
