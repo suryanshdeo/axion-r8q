@@ -557,100 +557,10 @@ axion r8q gms user
 ax -br -j8
 ```
 
-### Slow Build / Timeouts
-
-1. **Enable ccache** for faster rebuilds (see Environment Optimization)
-2. **Use SSD** instead of HDD
-3. **Increase RAM** or reduce parallel jobs
-4. **Check system resources:**
-
-```bash
-top -b -n 1 | head -20
-free -h
-```
-
-### Device Not Detected (adb)
-
-Ensure ADB is installed and device is connected:
-
-```bash
-adb devices
-adb shell getprop ro.serialno
-```
-
-If not detected:
-1. Enable USB debugging on device
-2. Check cable connection
-3. Install platform-tools: `sudo apt install android-tools-adb`
-4. Check permissions:
-
-```bash
-sudo usermod -a -G plugdev $USER
-# Logout and login for changes to take effect
-```
-
-### ROM Does Not Boot
-
-1. **Verify it's your custom ROM** – Check build output matches expected file
-2. **Check device compatibility** – Ensure you built for r8q, not another device
-3. **Try a different recovery** – TWRP or OrangeFox
-4. **Clean flash required** – Wipe all partitions and reflash
-5. **Check kernel logs:**
-
-```bash
-adb shell dmesg | tail -50
-adb logcat -c && sleep 5 && adb logcat
-```
-
-### ROM Boots But Battery Drains Quickly
-
-1. **Check screen-on time** in Settings → Battery
-2. **Disable unnecessary features** in settings
-3. **Check wakelocks:**
-
-```bash
-adb shell dumpsys batterystats --enable full-wake-history
-adb shell dumpsys batterystats | grep "Wake lock"
-```
-
-4. **Verify schedutil governor is active:**
-
-```bash
-adb shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-```
-
-### Vendor Submodule Issues
-
-**Submodule not initialized:**
-
-```bash
-git submodule update --init --recursive
-```
-
-**Submodule checkout failed:**
-
-```bash
-git submodule deinit -f vendor/samsung/r8q
-git submodule update --init vendor/samsung/r8q
-```
-
-**Update vendor blobs from upstream:**
-
-```bash
-git submodule update --remote --merge
-git add .gitmodules vendor/samsung/
-git commit -m "Update vendor blobs from TheMuppets"
-```
-
-**Check submodule status:**
-
-```bash
-git submodule status
-```
-
 ---
 
 ## 🔗 Useful Resources & Links
+
 
 - **[AxionOS Official Repository](https://github.com/AxionOS)** – Main ROM sources
 - **[LineageOS r8q Device Tree](https://github.com/LineageOS/android_device_samsung_r8q)** – Device-specific configs
@@ -659,10 +569,6 @@ git submodule status
 - **[Snapdragon 865 Specs](https://www.qualcomm.com/products/technology/snapdragon/phones)** – SoC information
 - **[TWRP Recovery](https://twrp.me)** – Custom recovery flashing instructions
 - **[OrangeFox Recovery](https://orangefox.io/)** – Alternative recovery with OTA support
-
----
-
-## 📝 Build System Commands Reference
 
 ## 📝 License
 
