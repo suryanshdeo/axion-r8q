@@ -114,14 +114,14 @@ If you prefer manual control, remove the hardware directory and clone all device
 
 ```bash
 rm -rf hardware/samsung/
-git clone https://github.com/suryanshdeo/android_device_samsung_r8q device/samsung/r8q/
-git clone https://github.com/suryanshdeo/android_device_samsung_sm8250-common device/samsung/sm8250-common/
-git clone https://github.com/suryanshdeo/proprietary_vendor_samsung_r8q vendor/samsung/r8q/
-git clone https://github.com/suryanshdeo/proprietary_vendor_samsung_sm8250-common vendor/samsung/sm8250-common/
-git clone https://github.com/suryanshdeo/android_kernel_samsung_sm8250 kernel/samsung/sm8250/
-git clone https://github.com/suryanshdeo/android_hardware_samsung hardware/samsung/
-git clone https://github.com/suryanshdeo/android_hardware_samsung_nfc hardware/samsung/nfc/
-git clone https://github.com/suryanshdeo/android_hardware_samsung_slsi_nfc hardware/samsung_slsi/nfc/
+git clone https://github.com/suryanshdeo/android_device_samsung_r8q -b bka-q2 device/samsung/r8q/
+git clone https://github.com/suryanshdeo/android_device_samsung_sm8250-common -b bka-q2 device/samsung/sm8250-common/
+git clone https://github.com/suryanshdeo/proprietary_vendor_samsung_r8q -b bka-q2 vendor/samsung/r8q/
+git clone https://github.com/suryanshdeo/proprietary_vendor_samsung_sm8250-common -b bka-q2 vendor/samsung/sm8250-common/
+git clone https://github.com/suryanshdeo/android_kernel_samsung_sm8250 -b bka-q2 kernel/samsung/sm8250/
+git clone https://github.com/suryanshdeo/android_hardware_samsung -b bka-q2 hardware/samsung/
+git clone https://github.com/suryanshdeo/android_hardware_samsung_nfc -b bka-q2 hardware/samsung/nfc/
+git clone https://github.com/suryanshdeo/android_hardware_samsung_slsi_nfc -b bka-q2 hardware/samsung_slsi/nfc/
 ```
 
 ---
