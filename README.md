@@ -228,22 +228,6 @@ axion r8q gms userdebug
 
 ## 🔨 Build the ROM
 
-### Clean Build (Optional)
-
-For a fresh build without build artifacts:
-
-```bash
-make clean
-```
-
-Or for a complete clean (including intermediates):
-
-```bash
-make clobber
-```
-
-Then proceed with the build steps below.
-
 ### Full Build Command
 
 ```bash
